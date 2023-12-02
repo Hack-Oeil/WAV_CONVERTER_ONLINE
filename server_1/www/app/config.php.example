@@ -1,0 +1,8 @@
+<?php
+ return[
+	'mysql' => [
+    	'dsn' 		=> '',
+        'login' 	=> '',
+        'password'	=> ''
+    ]
+];

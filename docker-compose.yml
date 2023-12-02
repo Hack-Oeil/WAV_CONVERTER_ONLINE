@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  webserver-1:
+    build: server_1/
+    ports:
+      - "80:80"
+    container_name: ho-webserver
