@@ -7,7 +7,7 @@ Vous devrez exploiter une injection de commande pour trouver le flag.
 
 
 ## Aperçu
-![infos/capture.jpg](infos/capture.jpg)
+![presentation/assets/images/capture.jpg](presentation/assets/images/capture.jpg)
 
 
 -----------

@@ -1,0 +1,19 @@
+<?php
+if (php_sapi_name() !== 'cli') exit();
+
+require dirname(__DIR__).'/vendor/autoload.php';
+
+$console = new Yoop\Console();
+
+$fp = fopen("php://stdin", "r");
+$in = '';
+while(true) {
+    echo "yoop> ";
+    $request = explode(' ', trim(fgets($fp)));
+    if($request[0] == 'quit') break;
+
+    echo call_user_func_array([$console, 'execute'], $request);
+    echo "\n";
+}
+echo 'A bientôt sur Yoop !';
+   

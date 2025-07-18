@@ -1,7 +1,14 @@
-version: '3.3'
+version: '3.9'
 services:
-  webserver-1:
-    build: server_1/
+  webserver:
+    build:
+      context: ./.docker/server_http
+      args:
+        TIMEZONE: ${TIMEZONE}
+    environment:
+      - HOOS_CTF_USERNAME=${HOOS_CTF_USERNAME:-}
+    labels:
+      ho.ctf.cyrhades: "1"
     ports:
       - ${PORT}:80
-    container_name: ho-webserver
+    restart: always
