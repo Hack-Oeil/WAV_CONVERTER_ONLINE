@@ -1,93 +1,140 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  
-  .container {
-    width: 80%;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0;
+  color: #111827;
+}
+.container-header {
+  display: flex;
+  align-items: center;        /* centre verticalement le texte et l'image */
+  gap: 15px;                  /* espace entre l'image et le titre */
+  justify-content: center;    /* centre horizontalement tout l'ensemble */
+  flex-direction: row;        /* assure l'alignement horizontal */
+}
+.container-header img {
+  height: 60px;
+  width: auto;
+}
+.container {
+  max-width: 720px;
+  margin: 10px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
 
-  .error {
-    width: 80%;
-    margin: 5px auto;
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
- 
-  a, a:active, a:hover, a:visited {
-      color: #155724;
-  }
-  .success {
-    width: 80%;
-    margin: 5px auto;
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #1f2937;
+}
 
-  h1, h3 {
-    vertical-align: middle;
-    text-align: center;
-    margin-bottom: 30px;
-  }
 
-  .container-header {
-    display: flex;
-    align-items: center;
-  }
-  
-  .container-header img {
-    margin-right: 10px; /* Espacement entre l'image et le titre */
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .file-input {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  label {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  input[type="file"] {
+h4 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin:5px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #1f2937;
+}
 
-    display:none;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.file-input label {
+  display: block;
+  padding: 40px;
+  border: 2px dashed #d1d5db;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  text-align: center;
+  color: #6b7280;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+  font-size: 15px;
+}
+
+.file-input label:hover {
+  border-color: #3b82f6;
+  background-color: #e0f2fe;
+  color: #2563eb;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+.success, .error {
+  max-width: 520px;
+  margin: 20px auto;
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.success {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #34d399;
+}
+
+.error {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #f87171;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+pre {
+  background-color: #1f2937;
+  color: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  overflow: auto;
+  max-height: 200px;
+}
+
+#drop-zone.highlight {
+  background-color: #dbeafe;
+  border-color: #2563eb;
+  color: #1e3a8a;
+}

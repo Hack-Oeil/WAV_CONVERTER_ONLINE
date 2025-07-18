@@ -15,10 +15,10 @@
     <h3>Convertisseur en ligne de fichier WAV en MP3</h3>
     <form method="post" enctype="multipart/form-data">
     <small><strong>Commande de conversion :</strong>lame --preset standard votre_fichier.wav output.mp3</small>
-      <div class="file-input">
-        <label for="file">Cliquez ici pour sélectionner un fichier WAV</label>
-        <input type="file" id="file" name="fichier_wav" accept=".wav" required>
-      </div>
+    <div class="file-input">
+      <label id="drop-zone">Glissez un fichier WAV ici ou cliquez pour le sélectionner</label>
+      <input type="file" id="file" name="fichier_wav" accept=".wav" required>
+    </div>
       <button type="submit">Convertir en MP3</button>
     </form>
   </div>

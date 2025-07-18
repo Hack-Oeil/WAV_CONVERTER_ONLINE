@@ -6,6 +6,7 @@
     <title>Conversion WAV vers MP3</title>
     <link rel="icon" href="favicon.ico?v=audio" />
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container container-header">
@@ -15,5 +16,56 @@
     <main>
         {% block content %}{% endblock %}
     </main>
+<script>
+  const dropZone = document.getElementById('drop-zone');
+  const fileInput = document.getElementById('file');
+
+  // Texte par défaut
+  const defaultText = 'Glissez un fichier WAV ici ou cliquez pour le sélectionner';
+
+  // Fonction pour mettre à jour le texte du label
+  function updateLabelText(file) {
+    dropZone.textContent = file ? `Fichier sélectionné : ${file.name}` : defaultText;
+  }
+
+  // Empêche les comportements par défaut
+  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropZone.addEventListener(eventName, e => {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  });
+
+  ['dragenter', 'dragover'].forEach(eventName => {
+    dropZone.addEventListener(eventName, () => dropZone.classList.add('highlight'));
+  });
+
+  ['dragleave', 'drop'].forEach(eventName => {
+    dropZone.addEventListener(eventName, () => dropZone.classList.remove('highlight'));
+  });
+
+  // Drop : affecte le fichier et met à jour le texte
+  dropZone.addEventListener('drop', e => {
+    if (e.dataTransfer.files.length) {
+      fileInput.files = e.dataTransfer.files;
+      updateLabelText(e.dataTransfer.files[0]);
+    }
+  });
+
+  // Clic = file picker
+  dropZone.addEventListener('click', () => fileInput.click());
+
+  // Changement manuel (file picker)
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+      updateLabelText(fileInput.files[0]);
+    } else {
+      updateLabelText(null);
+    }
+  });
+
+  // Initialise le label
+  updateLabelText(null);
+</script>
 </body>
 </html>
