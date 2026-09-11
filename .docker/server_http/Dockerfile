@@ -1,5 +1,4 @@
-# Utilisation d'une image de base avec Apache et PHP
-FROM php:8.0-apache
+FROM php:8.4-apache
 # Mise à jour des paquets et installation des dépendances
 RUN apt-get update && \
     apt-get install -y zip unzip git \
