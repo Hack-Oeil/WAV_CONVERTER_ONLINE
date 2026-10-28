@@ -16,7 +16,7 @@
     <main>
         {% block content %}{% endblock %}
     </main>
-<script>
+<script nonce="{{ csp_nonce }}">
   const dropZone = document.getElementById('drop-zone');
   const fileInput = document.getElementById('file');
 
